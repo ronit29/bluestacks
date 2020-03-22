@@ -1,0 +1,3 @@
+#python3
+
+DISCORD_TOKEN = 'NjkwNjM4MTM3ODM1MjU3OTU2.XnUbjQ.uQkGPWRmcNKp3Brb8ZwZXvtnMyo'
