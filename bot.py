@@ -40,11 +40,10 @@ Retrieves Searched google Data from storage and returns results
 @bot.command(name='recent', help='Searches Recent Google searches to display results.')
 async def handle_google_search(rsp, query: str):
     response = ''
-    data = db.read()
-    res = list(filter(lambda item: query in item[0], data.items()))
-    for tups in res:
-        response += tups[0] + '\n'
-    if not response:
+    data = db.read(query)
+    for results in data:
+        response += results.get('query') +'\n'
+    if not data:
         response = "No Data Found in History"
     await rsp.send(response)
 
